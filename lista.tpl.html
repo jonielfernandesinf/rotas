@@ -1,0 +1,9 @@
+<h2>Frutas ({{frutas.length}})</h2>
+<ul>
+    <li ng-repeat="(indice, fruta) in frutas">
+        <span><a href="#/edicao/{{fruta.id}}">{{fruta.nome}}</a></span>
+        <span><a title="Remover" style="margin-left: 1%;" href="#/exclusao/{{fruta.id}}">X</a></span>
+        <span><button title="Remover com Modal" style="margin-left: 1%;" ng-click="excluirModal(indice)">Excluir</button></span>
+    </li>
+</ul>
+<a href="#/novo">Novo</a>
