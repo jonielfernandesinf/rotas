@@ -28,6 +28,16 @@ function frutaService($http) {
             }
 
             return $http.delete(ENDERECO_BACKEND, parametros);
+        },
+        byId: function(id) {
+
+            var config = {
+                params: {
+                    id: id
+                }
+            }
+
+            return $http.get(ENDERECO_BACKEND + '/id', config);
         }
     }
 }

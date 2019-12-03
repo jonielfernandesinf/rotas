@@ -8,9 +8,7 @@ function listaController($scope, $location, frutaService) {
     
     frutaService.listar().then(function(response){
         console.log(response);
-        response.data.forEach(function(fruta){
-            $scope.frutas.push(fruta);
-        });
+        $scope.frutas = response.data;
     });
 
     console.log('listaController');

@@ -7,8 +7,10 @@ edicaoController.$inject = ['$scope', '$location', '$routeParams', 'FrutaService
 function edicaoController($scope, $location, $routeParams, frutaService) {
 
     // Variáveis Públicas
-    $scope.titulo = 'Editar Fruta';
-    $scope.fruta = $routeParams.fruta;
+    $scope.titulo = 'Editar Fruta';    
+    $scope.fruta = {};
+    $scope.fruta.id = $routeParams.id;
+    $scope.fruta.nome = $routeParams.nome;
 
     /**
      * @description Salva os dados editados da fruta

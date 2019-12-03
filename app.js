@@ -1,7 +1,6 @@
 angular
     .module('app', ['ngRoute', 'frutaServiceApp'])
-    .config(['$routeProvider', '$locationProvider', definirRotas])
-    .run(['$rootScope', inicializarVariaveisGlobais]);
+    .config(['$routeProvider', '$locationProvider', definirRotas]);
 
 function definirRotas($routeProvider, $locationProvider) {
 
@@ -14,7 +13,7 @@ function definirRotas($routeProvider, $locationProvider) {
         templateUrl: 'lista.tpl.html'
     }).
 
-    when('/edicao/:fruta', {
+    when('/edicao/:id/:nome', {
         controller: 'EdicaoController',
         templateUrl: 'formulario.tpl.html'
     }).
@@ -31,14 +30,4 @@ function definirRotas($routeProvider, $locationProvider) {
 
     otherwise({ redirectTo: '/' });
 
-}
-
-/**
- * @description Inicializa variáveis globais no rootScope
- * @param {*} $rootScope Injeção angular
- */
-function inicializarVariaveisGlobais($rootScope) {
-
-    $rootScope.frutas = [];
-    console.log('rotasApp.run');
 }
